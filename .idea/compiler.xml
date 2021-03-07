@@ -10,10 +10,12 @@
         <module name="config-server" />
         <module name="user-service" />
         <module name="movie-service" />
+        <module name="department-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="config-server" target="11" />
+      <module name="department-service" target="11" />
       <module name="eurekaserver" target="11" />
       <module name="movie-service" target="11" />
       <module name="parent-book" target="1.8" />
@@ -23,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="config-server" options="-parameters" />
+      <module name="department-service" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
       <module name="movie-service" options="-parameters" />
       <module name="parent-book" options="-parameters" />

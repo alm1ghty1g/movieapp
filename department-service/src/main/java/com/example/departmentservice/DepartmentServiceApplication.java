@@ -1,13 +1,13 @@
-package com.example.movieservice;
+package com.example.departmentservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MovieServiceApplication {
+public class DepartmentServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(MovieServiceApplication.class, args);
+        SpringApplication.run(DepartmentServiceApplication.class, args);
     }
 
 }
