@@ -1,26 +1,42 @@
 package com.example.departmentservice.serviceimpl;
 
-
-import com.example.departmentservice.entity.DepartmentEntity;
-import com.example.departmentservice.repository.DepartmentRepository;
+import com.example.departmentservice.events.source.SimpleSourceBean;
+import com.example.departmentservice.model.DepartmentEntity;
+import com.example.departmentservice.repositories.DepartmentRepository;
 import com.example.departmentservice.service.DepartmentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
 
+    private static final Logger logger = LoggerFactory.getLogger(DepartmentServiceImpl.class);
 
     @Autowired
     private DepartmentRepository departmentRepository;
 
+    @Autowired
+    SimpleSourceBean simpleSourceBean;
+
+
     @Override
     public DepartmentEntity findDepartment(int id) {
-        return departmentRepository.findById(id);
+        Optional<DepartmentEntity> departmentEntity = departmentRepository.findByDepartmentId(id);
+        simpleSourceBean.publishDepartmentChange("GET", id);
+        return (departmentEntity.isPresent()) ? departmentEntity.get(): null;
     }
+
+
 
     @Override
     public DepartmentEntity saveDepartment(DepartmentEntity departmentEntity) {
-        return departmentRepository.save(departmentEntity);
+        departmentEntity = departmentRepository.save(departmentEntity);
+        simpleSourceBean.publishDepartmentChange("SAVE", departmentEntity.getDepartmentId());
+        return departmentEntity;
     }
 }

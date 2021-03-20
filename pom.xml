@@ -24,9 +24,10 @@
     </properties>
 
     <modules>
-        <module>user-service</module>
         <module>config-server</module>
         <module>eurekaserver</module>
+        <module>gateway-server</module>
+        <module>user-service</module>
         <module>department-service</module>
     </modules>
 

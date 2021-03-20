@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -9,7 +10,7 @@
         <module name="eurekaserver" />
         <module name="config-server" />
         <module name="user-service" />
-        <module name="movie-service" />
+        <module name="gateway-server" />
         <module name="department-service" />
       </profile>
     </annotationProcessing>
@@ -17,7 +18,7 @@
       <module name="config-server" target="11" />
       <module name="department-service" target="11" />
       <module name="eurekaserver" target="11" />
-      <module name="movie-service" target="11" />
+      <module name="gateway-server" target="11" />
       <module name="parent-book" target="1.8" />
       <module name="user-service" target="11" />
     </bytecodeTargetLevel>
@@ -27,7 +28,7 @@
       <module name="config-server" options="-parameters" />
       <module name="department-service" options="-parameters" />
       <module name="eurekaserver" options="-parameters" />
-      <module name="movie-service" options="-parameters" />
+      <module name="gateway-server" options="-parameters" />
       <module name="parent-book" options="-parameters" />
       <module name="user-service" options="-parameters" />
     </option>

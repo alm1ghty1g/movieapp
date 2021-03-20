@@ -7,8 +7,8 @@
         <option value="$PROJECT_DIR$/user-service/pom.xml" />
         <option value="$PROJECT_DIR$/config-server/pom.xml" />
         <option value="$PROJECT_DIR$/eurekaserver/pom.xml" />
-        <option value="$PROJECT_DIR$/movie-service/pom.xml" />
         <option value="$PROJECT_DIR$/department-service/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-server/pom.xml" />
       </list>
     </option>
   </component>
